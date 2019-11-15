@@ -1,0 +1,12 @@
+SQS---allows you to move data between applications(Sending, Storing and Retrieving messages)
+SQS acts as a Buffer.
+A queue message can be upto 256kB.(Use SQL Extended client if more than 256KB)
+
+Deleivery of message atleast once.
+FIFO Queues are supported.
+Retention(14 days)
+
+
+web Server <-------> SQS Queue/Response Queue <---------> Processing Servers
+
+Use 2 SQS Queues for Priority architecture
