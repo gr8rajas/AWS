@@ -1,0 +1,53 @@
+Kinesis--Multiple Shards
+Capacity of Kinesis---1 Shard 1MB write and 2 MB read
+Split shards to increase thoughput/Capacity
+
+
+Record Consist  of Partition key(A partition key is used to group data by shard within a stream.),Sequence Number and data blob
+
+Kinesis Retention Period--24 hours(Increaase to 7 days if required--charged)
+
+Producers -------> Kinesis Stream ----------> Consumer
+
+
+Producers
+1.AWS Kinesis SDK (putRecord, putRecords---Multiple records with 1 request)
+2.KPL(Kinesis Producer library) ---(Producer incurrs additional delay in processing)
+  Batching(Collection)----Better Throughput----groups of streams
+  Aggregation------groups of records and combine into one stream
+
+3.Kinesis Agent---Standalone Java application(Install on Web Server,DB Server etc., log directory)
+
+KCL Consumer can be developed using Java, Python, ruby etc.
+KCL handles checkpointing using DynaoDB
+KCL automatically Load balnces
+The DynamoDB KCL creates had 10 read capacity units and 10 write capacity units(can add more provisioned throughput)
+
+Consumers can emit data to S3,DynaoDB,Redshift,ElasticSearch etc by using Connector Library, Lambda etc.
+Consumers can be custom development
+
+Connector Library Pipeline
+1.Kinesis Streams
+2.itransofrmer ---transformations
+3.ifiter---Filteration
+4.ibuffer---specify size limit
+5.iemitter--Client calls to other AWS services(Redshift,S3 etc.)
+
+https://github.com/awslabs/amazon-kinesis-connectors/blob/master/samples/src/main/resources/S3Sample.properties
+
+
+
+Kinesis Firehose:
+
+Collect and loads streaming data in near real time
+Load data into S3, Redshift and ElasticSearch
+Fully Managed and highly availabe
+
+Producers----> Kinessis Firehose Delivery Stream-------> S3-->Redshift(cp from S3)
+
+Methods to load data into Firehose:
+Kinesis Agent
+AWS SDK(PutRecord,PutRecordBatch)
+
+Lambda invocation Failes(3 retries)
+
