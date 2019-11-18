@@ -1,3 +1,8 @@
+Kinesis
+Kinesis Streams----------------collect, Process and analyze Streams real time
+Kinesis Analytics--------------Process and analyze streaming data in SQL
+Kinesis Firehose---------------Load data into Services like Redshift
+
 Kinesis--Multiple Shards
 Capacity of Kinesis---1 Shard 1MB write and 2 MB read
 Split shards to increase thoughput/Capacity
