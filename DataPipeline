@@ -1,16 +1,31 @@
 Privately connect your datacenter with a network link directly to your VPC in an AWS region--AWS Direct Connect
+Customer select a Direct Connect dedicated physical connection to accelerate network transfers between their datacenters and ours.
+AWS Direct Connect lets you establish a dedicated network connection between your network and one of the AWS Direct Connect locations. 
 
-Connect existing on-premises applications to cloud storage
+
+Connect existing on-premises applications to cloud storage. -- Storage Gateway
  - for files stored as objects in Amazon S3.   File Gateway
  - for tape backups.    Tape Gateway
  - for block volumes.   Volume Gateway
+ A gateway sits on-premises and links your environment to the AWS cloud. It's an ideal solution for 
+ hybrid scenarios where some storage is needed locally for performance or compliance reasons, but some may be offloaded to S3.
+ 
  
  Read and write data to Amazon S3 over long geographic distances -- Amazon S3 Transfer Acceleration
+ Amazon S3 Transfer Acceleration makes public Internet transfers to Amazon S3 faster. 
+ 
  
  Collect and ingest multiple streaming data sources --- Amazon Kinesis Data Firehose
+ Amazon Kinesis Data Firehose is the easiest way to load streaming data into AWS. 
+ It can capture and automatically load streaming data into Amazon S3 and Amazon Redshift, enabling near real-time analytics with existing business 
+ intelligence tools and dashboards you’re already using today. 
  
- Physically transport petabytes of data in batches to the cloud --- AWS Snowball
+ 
+Physically transport petabytes of data in batches to the cloud --- AWS Snowball
+Snowball is a petabyte-scale data transport solution that uses secure appliances to transfer large amounts of data into and out of AWS. 
 
 Physically transport petabytes of data in an appliance with on-board storage and compute capabilities --- AWS Snowball Edge
+Snowball Edge is a petabyte-scale data transfer device with on-board storage and compute capabilities. 
 
 Migrate tens of petabytes to exabytes of data in batches to the cloud -- AWS Snowmobile
+Snowmobile is an exabyte-scale data transport solution that uses a secure semi 40-foot shipping container to transfer large amounts of data into and out of AWS. 
