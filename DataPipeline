@@ -1,0 +1,16 @@
+Privately connect your datacenter with a network link directly to your VPC in an AWS region--AWS Direct Connect
+
+Connect existing on-premises applications to cloud storage
+ - for files stored as objects in Amazon S3.   File Gateway
+ - for tape backups.    Tape Gateway
+ - for block volumes.   Volume Gateway
+ 
+ Read and write data to Amazon S3 over long geographic distances -- Amazon S3 Transfer Acceleration
+ 
+ Collect and ingest multiple streaming data sources --- Amazon Kinesis Data Firehose
+ 
+ Physically transport petabytes of data in batches to the cloud --- AWS Snowball
+
+Physically transport petabytes of data in an appliance with on-board storage and compute capabilities --- AWS Snowball Edge
+
+Migrate tens of petabytes to exabytes of data in batches to the cloud -- AWS Snowmobile
