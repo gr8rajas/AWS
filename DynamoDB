@@ -53,3 +53,30 @@ Any data written to the main table is copied asynchronously to GSI's(Eventaul co
 
 
 
+DynamoDB Stream:
+An ordered Record of updates to a DynamoDb table
+When a stream is enabled on table using API, it records changes to a table and store it for 24 hours
+Streams Endpoint is different from DynamoDB endpoint to access
+
+Streams Configurations:
+KEYS_ONLY -- Only the Key attributes are written to Stream
+NEW_IMAGE -- Enter item POST Update is written to Stream
+OLD_IMAGE -- Enter item PRE Update is written to Stream
+NEW_AND_OLD_IMAGE -- the pre and post comparison without consulting DynamoDB
+
+Use Cases:
+Replication(DR failure)
+Triggers(Lamba)
+
+
+
+
+
+
+
+
+
+
+
+
+
