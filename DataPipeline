@@ -33,3 +33,8 @@ Snowmobile is an exabyte-scale data transport solution that uses a secure semi 4
 
 Migrate databases to AWS quickly and securely, with minimal downtime -- AWS Database Migration Service
 
+
+Enforce Compliance on Glacier using Vault Lock(you can use API)
+Vault Lock Controls--Timer based Retention,Undeleteble or "both"
+Implement control using IAM policies
+
