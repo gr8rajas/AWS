@@ -1,0 +1,55 @@
+DyanamoDB supports both Document and Key Value Store DB service
+Fully resilient and highly available
+Data is accessed by HTTP endpoints
+
+DyanomoDB is a collection of tables in a Region(availability zone is unimportant in DynamoDb architecture)
+
+Perforamce units(read,write capacity in 1 WCU=1KB per write, 1 RCU =4KB per write)
+
+Eventual consistent reads(Default)--(Use 1/2 RCU)--less cost
+Strongly consistent reads(use 1 RCU)
+
+All rows in a DynamoDB table is referred as items(Collection of attributes)
+Table partition Key(Hash Key) -- uniquely identify an item
+Sort Key/Range Key --(Allows one to many relationships and Sorting Order Ex:Reading of Temperature)
+
+Data types
+---Scalar Types(String, number, Binary, Boolean)
+---DynamoDB types(Document(List/Map), Set--An Array Datatype)
+
+One partition can store 10 GB of data in 1 Node and can handle 3000 RCU and 1000 WCU
+Data is distributed based on its partition Key(Hash Key)
+The number of Partitions is managed by DyanamoDB and grow automatically
+No Automatic decrease of partitions in DynamoDB
+
+DynamoDB offers two retrieval operations--SCAN(Inefficeint) & QUERY
+
+
+
+Indexes come in two forms --- Global Secondary and Local Secondary
+
+Local Secondary Indexes can be created only at Table Creation
+Local Secondary Indexes used an alternative Sort Key (By default contains hash key,sort key and new sort key) and any other 
+attributes can be added as Projected Values
+Any data written to the main table is copied asynchronously to LSI's(Eventaul consistencty)
+Writing data to LSI's consume RCU's and WCU's
+LSI is a Sparse Index.
+
+Be default any non key values are not stored in an LSI
+
+Take care with planning your LSI and item Projections----** Its important **
+
+LSI Storage concerns
+----Be aware of ItemCollections(Storing in Main table and LSI)
+The maximum size of an Item collection is 10GB
+
+
+Global Secondary Indexes has same concept of LSI's but they have an alternate Partition & Sort Key
+Number of options for attribute projections:
+KEYS_ONLY -- New Partition and Sort Keys, old Partition Key if applicable, old Sort Key
+INCLUDE --- specify custom Projection Values
+ALL --- All attributes into GSI
+Any data written to the main table is copied asynchronously to GSI's(Eventaul consistencty)
+
+
+
