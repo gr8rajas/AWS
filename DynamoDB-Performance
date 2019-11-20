@@ -1,0 +1,18 @@
+Performace is all about partitions
+Partitions--Reads/Writes are dependent on partitions
+
+Two Formula's
+one based on Performance
+No of Partitions = Desired RCU/3000 RCU + Desired WCU/1000 WCU
+
+one based on Capacity
+No of Partitions = Data Size in GB/10 GB 
+
+
+Select an Appropriate Partition Key
+---Should have many distinct values
+---Uniform write pattern across all partition key values
+---You shouldn't mix hot & cold key values within a table
+
+If there is hotspotting of Keys on one specific partition, use Prefixing or Suffixing of the partition key for better performance.
+
