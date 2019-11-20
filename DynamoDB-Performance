@@ -16,3 +16,11 @@ Select an Appropriate Partition Key
 
 If there is hotspotting of Keys on one specific partition, use Prefixing or Suffixing of the partition key for better performance.
 
+If too many writes(Uneven Writes) on Main table and GSI, use SQS as a managed Buffer.
+Sensors ----> SQL Queue -----> Lambda -----> DynamoDB
+
+Uneven Reads(Promotion Products on an ecommerce site)
+Use caching(Inmemory cache)
+Also we can use DynamoDb Streams
+
+
