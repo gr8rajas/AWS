@@ -18,5 +18,27 @@ EMR File System --Stores data on S3
 EMRFS and Consistent View
                 -- Checks for list and read-after-write consistency for new S3 objects written on synched with EMRFS
                  (Uses DynamoDb in background for track of S3 objects)
-                 
-                 
+
+
+Choosing the appropriate Instance Type
+MapReduce -- M3 or M4 Instance
+Machine Learning -- P2 or C3 or C4 Instance
+Spark -- R3 or R4 Instance types
+Large HBase/Large Instance Stored HBase(I/O performace and IOPS) --D2/I2 or I3
+
+
+
+Master Node Sizing
+Clusters with 50 Nodes or less(Use m3.xlarge or m4.xlarge for your Master Node)
+Clusters with 50 Nodes or more (Use m3.2xlarge or m4.2xlarge for your Master Node)
+
+Core Node Sizing
+
+Use HDFS Cluster if high I/O is required else EMR cluster
+
+Replication factor of EMR, by default..
+Cluster of 10 Nodes or more -- 3
+Cluster of 4-9 Nodes        -- 2
+Cluster of 3 Nodes or less. -- 1
+
+
