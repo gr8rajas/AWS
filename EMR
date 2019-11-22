@@ -1,0 +1,22 @@
+An EMR cluster can have at most 50 Instance groups(Collection of Ec2 Instances)
+1 Master Instance Group. ---> 1 or more Core Instance Group. -----> 48 Task Instance groups
+
+EMR is a Single Availability Zone concept.(because of replication-latency)
+
+Master Node ----> Core Nodes(HDFS)------> Task Nodes -optional(only for Procesing Ex: executors extra capacity, No HDFS)
+
+Storage Options:
+Instance Store--local storage directly attached to Ec2 (Ephemeral-del)
+              -- High IOPS at low cost
+              (D2 and I3)
+EBS Volumes --Volumes do not persist after Cluster termination
+EMR File System --Stores data on S3
+                --Uses data directly on S3 without ingesting into HDFS
+                --take advantage of reliability, durability and scalability of S3
+                --resize & terminate EMR clusters without losing data
+                -- Use EMRFS and HDFS together for high I/O performance
+EMRFS and Consistent View
+                -- Checks for list and read-after-write consistency for new S3 objects written on synched with EMRFS
+                 (Uses DynamoDb in background for track of S3 objects)
+                 
+                 
