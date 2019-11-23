@@ -41,4 +41,21 @@ Cluster of 10 Nodes or more -- 3
 Cluster of 4-9 Nodes        -- 2
 Cluster of 3 Nodes or less. -- 1
 
+CloudWatch Metrics --- 5 minute updates(not configurable, archived for 2 weeks)
+
+We can Join Hive and DynamoDb tables using HiveQL using DynamoDb converter
+We can query data in DynamoDb tables using HiveQL
+
+Copy data from DynamoDB tables into HDFS & Vice Versa
+Copy data from DynamoDB tables into S3 & Vice Versa
+
+DynamoDb Item Size restricted(400KB Max)
+
+
+Presto -- In memory distributed SQL Engine(Faster than Hive)
+Presto can be on top of Hive/Hbase/Cassandra/Kafka/MySQl etc.
+High Conceurrency, run thousands of queries per day(sub-second to minutes)
+Presto is not a database, not designed for OLTP
+Not recommended for very large datasets
+
 
