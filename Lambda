@@ -1,0 +1,10 @@
+Severless
+FAAS--Function as a Service
+
+Events and Contexts(attributes & Methods Ex:metadata) are inputs to Lambda
+
+Lambda Limitations
+Local Disk Space---512 MB("/tmp space")
+Number of Processes and threads -- 1024
+Maximum execution duration -- 300 sec
+
