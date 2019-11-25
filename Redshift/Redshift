@@ -2,4 +2,30 @@ Fast and fully Managed
 Never Use it fot OLTP applications
 ANS-SQL compatible
 Its a column Oriented Database
+Redshift is a Single Availibility zone concept
 
+Can connect to Redshift Cluster using Redashift Endpoint
+
+Backups to S3 done in parallel
+"Shared Nothing" architecture
+
+
+To copy data from S3 to Redshift
+----> use copy command.  copy 'table' from 's3 bucket' credentails 'iam-role'
+
+Columnar Database is not ideal for small amount of data(100 Gb or less)
+Not ideal for large Binary Objects
+
+
+Table Design:
+
+----> distribution Styles
+Even -- Rows are distributed across slices regarding the values in a particular column(Default distribution)
+     -- No joins, reduced parallelism
+Key -- data is collocated
+    -- Tables used in joins
+    -- Large fact tables in a Star Schema
+All - entire distribution is stored in each node
+    -- Data not changig frequently
+    -- Data is few million Rows
+    -- No common distribution Key
