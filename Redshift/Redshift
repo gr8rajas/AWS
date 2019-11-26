@@ -29,3 +29,30 @@ All - entire distribution is stored in each node
     -- Data not changig frequently
     -- Data is few million Rows
     -- No common distribution Key
+
+
+Redshift Sort Keys:
+     Redshift stores your data on disk according to sorted order.
+     Sort Keys are closest thing to index.
+     Redshift blocksize 1MB
+     
+Use Timestamp column as Sort Keys
+Column that are involved in Join conditions(Same column for Distributed nad Sort)
+     
+Compound SortKey -- Includes all the Columns listed in the Sort Key Definition(Default)
+                     Benefits Joins,Order By,Group By, Partition By,Order By window functions
+                     Run Vaccum(Resort) and Analyze operations on large data loads
+Interleaved SortKey -- Equal Weight to each column in the sort key
+                     -- Multiple queries/diferent filters(BI)
+                     --  Run Vaccum(Resort) and Analyze operations on large data loads is slower
+                     -- Use on large data loads(100 Million + rows)
+                     -- Not good for data being loaded in Sorted order
+                                        
+
+https://aws.amazon.com/blogs/big-data/optimizing-for-star-schemas-and-interleaved-sorting-on-amazon-redshift/
+
+Compression Technique:
+Use Automatic Compression(Recommended)
+Can also specify in DDL
+copy command(compupdate off) -- Analyze compression table;
+
