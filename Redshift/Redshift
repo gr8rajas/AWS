@@ -56,3 +56,13 @@ Use Automatic Compression(Recommended)
 Can also specify in DDL
 copy command(compupdate off) -- Analyze compression table;
 
+Constraints in Redshift:
+PRIMARY KEY  -- Not Enforced
+FOREIGN KEY  -- Not Enforced
+UNIQUE       -- Not Enforced
+NULL/NOT NULL  --- -Enforced
+REFERENCES(PK referring to FK in a diff table)  -- Not Enforced
+
+https://github.com/awslabs/amazon-redshift-utils/tree/master/src/AdminScripts
+
+
