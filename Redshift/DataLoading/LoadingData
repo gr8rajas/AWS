@@ -1,0 +1,8 @@
+No of Slices in redshift equal to more than no of files for data loading from S3
+Ex: 4 Slices -- 4 or 8 Files
+Keep Files in Even number
+
+Manifest(create in Json Format):
+-- Load required files only
+-- Load files from different buckets
+-- Load files with different Prefix
