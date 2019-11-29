@@ -1,0 +1,11 @@
+
+User connections -queues
+
+Limits
+---> Concurent User Connections -500
+Total concurrency user defined level of queues - 50(opto 50 queries running at same time)
+Queues -- upto 8(1 Superuser queue)
+set query_group to 'group_name';
+
+WLM QUEUE management rules
+
