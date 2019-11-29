@@ -6,3 +6,46 @@ Manifest(create in Json Format):
 -- Load required files only
 -- Load files from different buckets
 -- Load files with different Prefix
+
+
+Data Fromats that are supported when you run copy command  
+------csv,delimiter files, fixed width file,json,avro
+
+Check error checking tables when there are any errors in loading data to Redshift
+ --System Tables  STL_LOAD_ERRORS
+                  STL_LOADERROR_DETAIL
+                  
+No Upsert in Redshift ?
+---- Use temporary Staging table
+   ---> Replace Existing Rows(Use combination of Delete and Insert Statments)
+    Begin transcation
+    
+    Delete from main_table M using stage_table S where M.key = S.Key
+    
+    Insert into main_table select * from stage_table
+    
+    end transction;
+    
+--- Specify a Column List
+    Begin transcation
+    
+    update main_table M set M.column = stage_table.column from where M.key = Stage_table.Key
+    
+    drop stage_table
+    
+    end transction;
+    
+ 
+Supported Encryption while loading data into Redshift
+ Server Side Encryption with S3 Managed Keys(SSE-S3)
+ Server Side Encryption with KMS(SSE-KMS)
+ Client Side Encryption using using Client Side Symmetric Master Key
+ 
+Unsupprted Encryption while loading data into Redshift
+Customer Provided keys(SSE-C)
+Client Side Encryption(Asymmetric master key)
+
+Unloading Data from Redshift to S3
+ UNLOAD ('select query') to 'S3 Bucket' CREDENTIALS 'ARN';
+ Unload command does not support Customer Provided keys(SSE-C) encryption
+
