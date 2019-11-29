@@ -1,0 +1,29 @@
+https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html
+
+Vaccum:(Blocks are immutable)
+Vaccum helps to recover the space and sorts the table
+Vaccum after bulk loads,updates and deletes
+
+VACCUM FULL 'TABLE_NAME';
+VACCUM SORT ONLY 'TABLE_NAME';(No reclaiming disk space, Only sort)
+VACCUM DELETE ONLY 'TABLE_NAME';(Reclaims disk space, No sort)
+VACCUM REINDEX 'TABLE_NAME';(Use for interkeaved sort keys)
+
+Use deepcopy on very large tables(Vaccum can be slow on large tables - 700GB)
+--recreates and repopulate with bulk insert, including sorting.
+
+How to perform a deep copy?
+-----Use original Table DDL to create temp table and Copy data to temp table and drop orig and alter rename.(Recommended and Fast)
+-----Create Table Like  Insert, drop and Alter.
+-----Create Temp Table and Truncate
+
+
+Backups & Restore 
+--Snapshots(Automated 8 hour interval or 5GB of data changes)
+-- Manual Snapshots Anytime
+--Supports Cross Region Snapshots
+
+
+
+Redshift Utilities on github
+
