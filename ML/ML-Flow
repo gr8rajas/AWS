@@ -1,1 +1,26 @@
 ML
+
+Multiclass Classification Model
+--A classification task with more than two classes; 
+e.g., classify a set of images of fruits which may be oranges, apples, or pears.
+
+Binary classification Model
+--Ex: Will Customer buy a product or not? Is the transaction fradu or not?(Yes or No)
+
+https://aws.amazon.com/blogs/big-data/building-a-binary-classification-model-with-amazon-machine-learning-and-amazon-redshift/
+
+When we need to check or visualize the performance of the multi - class classification problem, 
+we use AUC (Area Under The Curve) ROC (Receiver Operating Characteristics) curve. 
+It is one of the most important evaluation metrics for checking any classification model’s performance.
+It tells how much model is capable of distinguishing between classes. Higher the AUC, better the model is at predicting 0s as 0s and 1s as 1s.
+By analogy, Higher the AUC, better the model is at distinguishing between patients with disease and no disease.
+Ranges from 0 and 1
+
+Regression Model
+--Ex: To determine your home worth, Predict a numeric value
+
+RMSE(Root Mean Square Error)---to determine quality of Model
+---The Lower the RMSE, the better the model Performance
+
+https://aws.amazon.com/blogs/big-data/building-a-numeric-regression-model-with-amazon-machine-learning/
+
