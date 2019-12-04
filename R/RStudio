@@ -1,0 +1,35 @@
+-- install R  AWS Linux2 version  (the current version)
+
+sudo amazon-linux-extras install R3.4
+
+-- install R  older AWS Linux version 
+
+sudo yum install -y R
+
+-- download and install RStudio-Server
+wget https://download2.rstudio.org/rstudio-server-rhel-1.0.153-x86_64.rpm
+sudo yum install -y --nogpgcheck rstudio-server-rhel-1.0.153-x86_64.rpm
+
+-- add user(s)
+sudo useradd rstudio
+sudo passwd studio
+
+-- install libcurl-devel package
+sudo yum install libcurl-devel.x86_64
+
+(8787--port number RStudio)
+
+
+### R Script ###
+-- install RCurl package in RStudio
+install.packages(â€œRCurl")
+
+-- load RCurl
+
+library("RCurl")
+
+-- Code to read an AWS public data set\
+
+data <- read.table(textConnection(getURL("https://cgiardata.s3-us-west-2.amazonaws.com/ccafs/amzn.csv" )), sep=",", header=FALSE)
+head(data)
+
