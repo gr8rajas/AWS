@@ -1,10 +1,18 @@
 
 ElasticSearch is a distributed multitenant capable of full text engine with a HTTP web interface
 Integrates with L&K(ELK Stack)
+(Shards(Primary Shard and Replica Shard) and Indexes)
 
 Usecases: log analysis, 
           Used as a distributed document store, 
           Real time application monitoring
           searching a website etc, 
           
-          
+ElasticSearch Service Domain:
+Collection of all resources needed to run Amazon ElasticSearch cluster
+Cluster config(No of instances), Index settings
+
+Dedicated Cluster node does all the management, configuration tasks(Recommended 3 Master Nodes for production)
+
+https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-managedomains.html
+
