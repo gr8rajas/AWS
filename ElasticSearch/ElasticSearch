@@ -1,0 +1,10 @@
+
+ElasticSearch is a distributed multitenant capable of full text engine with a HTTP web interface
+Integrates with L&K(ELK Stack)
+
+Usecases: log analysis, 
+          Used as a distributed document store, 
+          Real time application monitoring
+          searching a website etc, 
+          
+          
