@@ -1,2 +1,13 @@
 
 https://hadoop.apache.org/docs/r2.7.1/hadoop-mapreduce-client/hadoop-mapreduce-client-core/EncryptedShuffle.html
+
+Encryption At Rest---Redshitft
+---Key Management Service
+        Four Tier hierachy of encryption keys
+          Master Key
+          Cluster Encryption Key
+          Database Encruption Key
+          Data Encryption Keys
+---Hardware Security Module(HSM--Cloud or HSM)
+
+Encryption on Redshift is immutable
