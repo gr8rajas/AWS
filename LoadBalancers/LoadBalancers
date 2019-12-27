@@ -1,0 +1,14 @@
+Application Load Balancers--Intelligent Routing
+Network Load Balancers-----Extreme Performance
+Classic Load Balancer(ELB)----Simple,Legacy(cost is low)
+
+Cross Zone load balancing----Traffic can be shared across multiple availibility zones.(gets evenly distributed traffic)
+Path Patterns----URL PATH(redirects to a diff instance on diff availibility zone Ex: Rendering Media/Images)
+
+Autoscaling Group --You need Launch configuration(type of Ec2 etc.)
+
+S3-standard -highly available
+S3-IA -highly available
+S3 -Reduced Redundancy -not highly available
+S3- Single AZ -not highly available
+
