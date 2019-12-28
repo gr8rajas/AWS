@@ -1,0 +1,41 @@
+Connecting to VPC:
+ Two ways: Internet Gateway---------------> Router---> router Table--->Network ACL---->security Group---->Subnet(Instance)
+           Virtual Private Gateway--------> Router---> router Table--->Network ACL---->security Group---->Subnet(Instance)
+           
+           
+Network ACL's are stateless.(You can blick specific IP addresses on ACL's --Allow Rules/Deny Rules)
+Security Groups are Statefull
+
+In a VPC, we can:
+  Assign Custom IP address ranges in subnet
+  configure route tables between Subnets
+  we can also have Subnet Access control lists
+ 
+ 1 or more subnets - 1 availability zone
+ 
+Default VPC--All subnets in a default VPC will have route out to the Internet
+           --Each Ec2 Isntance has a public and private IP address.
+
+Route tables can be configured to communicate between two Subnets via IPV4 & IPV6
+
+When you create a VPC,a default route table,NACL(Allows Inbound and Outbound Traffic), and defaut Security group is created, it won't create subnets or default 
+internet gateway. Security Groups can't span VPC's
+
+When creating a NAT instance(Ec2), Disable Source/destination Check on the instance.NAT instance must be in Public Subnet.There
+must be route of  Private Subnet inorder to access Internet.
+
+NAT Gateways help the private Subnets to reach the Internet without being Public(Software Updates).
+1 NAT Gateway in 1 AZ. Starts with 5GBPS throughput. Not associated with Security Groups. No need to Disable Source/destination Checks.
+SPOF.(Create NAT Gateway in each AZ and configure routing)
+
+By default Custom NACL's denies inbound and outbound traffic until you add rules.
+
+Atleast two Subnets required for configuring a Load Balancer.
+
+VPC flowlogs can be sent to either Cloudwatch logs or S3 bucket.
+You cannot  enable flow logs of VPC that are peered with other VPC's unless the other VPC is in same account.
+AWS DNS traffic is not monitored(only own DNS Server traffic is monitored), DHCP is not monitored.
+
+Gateway Endpoints support currently DynamoDB and S3
+
+
